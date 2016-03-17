@@ -37,10 +37,10 @@ import javafx.stage.Stage;
 public class StanjeRezultata extends Application {
 
     private static final int SIRINA_PROZORA = 600;
-    private static final int VISINA_PROZORA = 300;
+    private static final int VISINA_PROZORA = 400;
 
     private static final int SIRINA_LISTE_REZULTATA = 250;
-    private static final int VISINA_LISTE_REZULTATA = VISINA_PROZORA;
+    private static final int VISINA_LISTE_REZULTATA = VISINA_PROZORA-100;
     private static final int VISINA_CELIJE = 50;
     private Group grupa;
     private Scene scena;
@@ -151,7 +151,7 @@ public class StanjeRezultata extends Application {
     }
 
     private void definirajListuRezultata() {
-        ScrollPane pane = new ScrollPane();
+       // ScrollPane pane = new ScrollPane();
         listaRezultata = new ListView<>();
         listaRezultata.setMinSize(SIRINA_LISTE_REZULTATA, VISINA_LISTE_REZULTATA);
         listaRezultata.getSelectionModel().selectedItemProperty().addListener((ObservableValue<? extends Igra> observable, Igra oldValue, Igra newValue) -> {
@@ -161,8 +161,9 @@ public class StanjeRezultata extends Application {
         // testniPodaci();
 
         dodajZadnjuStavku();
-        pane.setContent(listaRezultata);
-        grupa.getChildren().add(pane);
+      //  pane.setContent(listaRezultata);
+      //  grupa.getChildren().add(pane);
+      grupa.getChildren().add(listaRezultata);
     }
 
     private void definirajGrupu() {
